@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiVector", "MultiVector.csproj", "{DC7EAEE9-B63F-442A-91E7-FB688989514B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC7EAEE9-B63F-442A-91E7-FB688989514B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7EAEE9-B63F-442A-91E7-FB688989514B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7EAEE9-B63F-442A-91E7-FB688989514B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7EAEE9-B63F-442A-91E7-FB688989514B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69C49C68-A559-4290-91A7-7E9D3F975308}
+	EndGlobalSection
+EndGlobal

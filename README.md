@@ -1,10 +1,10 @@
 # MultiVector
 A multivector and spinor lib for c#
 
-A simple lib to implement multivectors in 3d space as scalar, vector, bivector and psedo-scalar in c#
-Translated from a c++ version I wrote in 2005, It has not been tested as of first posting.
+A simple lib to implement multivectors in 3d spacer in c#, basic operations, *, - + /, inverse, spin, etc are implemented.
+Translated from a c++ version I wrote in 2005, and have moved to c# several times, I have not tested this one yet.
 
-A version of the same code is used in https://github.com/ScudderSaul/WebHedron2 when it runs to spin 3d Hedrons around a vector when spin is selected.
+Another version of the same code is used in https://github.com/ScudderSaul/WebHedron2 when it runs to spin 3d Hedrons around a vector when spin is selected.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files(the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and /or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

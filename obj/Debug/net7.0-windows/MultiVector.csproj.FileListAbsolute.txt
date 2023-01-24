@@ -1,0 +1,12 @@
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\bin\Debug\net7.0-windows\MultiVector.deps.json
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\bin\Debug\net7.0-windows\MultiVector.dll
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\bin\Debug\net7.0-windows\MultiVector.pdb
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\obj\Debug\net7.0-windows\MultiVector.csproj.AssemblyReference.cache
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\obj\Debug\net7.0-windows\MultiVector.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\obj\Debug\net7.0-windows\MultiVector.AssemblyInfoInputs.cache
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\obj\Debug\net7.0-windows\MultiVector.AssemblyInfo.cs
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\obj\Debug\net7.0-windows\MultiVector.csproj.CoreCompileInputs.cache
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\obj\Debug\net7.0-windows\MultiVector.dll
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\obj\Debug\net7.0-windows\refint\MultiVector.dll
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\obj\Debug\net7.0-windows\MultiVector.pdb
+C:\Users\Saul\Source\Repos\ScudderSaul\MultiVector\obj\Debug\net7.0-windows\ref\MultiVector.dll

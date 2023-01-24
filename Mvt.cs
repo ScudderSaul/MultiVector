@@ -254,6 +254,21 @@ namespace MvLib
             return (vv);
         }
 
+        public static Mv operator *(Mv b, double a)
+        {
+            Mv vv = new();
+
+            vv._mv[Mvs] = b._mv[Mvs] * a;
+            vv._mv[Mvs] = b._mv[Mvi] * a;
+            vv._mv[Mvs] = b._mv[Mvj] * a;
+            vv._mv[Mvs] = b._mv[Mvk] * a;
+            vv._mv[Mvs] = b._mv[Mvij] * a;
+            vv._mv[Mvs] = b._mv[Mvjk] * a;
+            vv._mv[Mvs] = b._mv[Mvki] * a;
+            vv._mv[Mvs] = b._mv[Mvp] * a;
+            return (vv);
+        }
+
         public static Mv operator /(Mv b, double a)
         {
             if (a == 0.0)
@@ -498,14 +513,7 @@ namespace MvLib
             return (nv);
         }
 
-        public void Clear()
-        {
-            for (int ii = 0; ii < 8; ii++)
-            {
-                _mv[ii] = 0.0;
-            }
-        }
-
+        
         public static Mv operator +(Mv a, Mv m)
         {
             Mv nv = new();
@@ -636,6 +644,117 @@ namespace MvLib
             }
             return (rt);
         }
+
+     public static Mv Exp(Mv tt)
+        {
+            double fact = 1.0;
+            Mv sumb = new();
+            Mv cv = new();
+            cv[Mvs] = 1.0;
+            sumb[Mvs] = 1.0;
+
+            for (int ii = 1; ii <= 10; ii++)
+            {
+                fact *= ((double)ii);
+                cv = cv * tt;
+                sumb = sumb + (cv * (1.0/fact));
+            }
+            return (sumb);
+        }
+
+        public static Mv Sinh(Mv tt)
+        {
+            double fact = 1.0;
+            Mv sumb = new();
+            Mv cv = new();
+            cv = tt;
+            sumb = tt;
+
+            for (int ii = 2; ii <= 11; ii++)
+            {
+                fact *= ((double)ii);
+                cv = cv * tt;
+                if ((ii % 2) == 1)
+                {
+                    sumb = sumb + (cv * (1.0/fact));
+                }
+            }
+            return (sumb);
+        }
+
+
+        public static Mv Cosh(Mv tt)
+        {
+            double fact = 1.0;
+            Mv sumb = new();
+            Mv cv = new();
+            sumb[Mvs] = 1.0;
+
+            for (int ii = 2; ii <= 10; ii++)
+            {
+                fact *= ((double)ii);
+                cv = cv * tt;
+                if ((ii % 2) == 0)
+                {
+                    sumb = sumb + (cv * (1.0/fact));
+                }
+            }
+            return (sumb);
+        }
+
+        public static  Mv Sin(Mv tt)
+        {
+            double fact = 1.0;
+            Mv sumb = new();
+            Mv cv = new();
+            cv = tt;
+            sumb = tt;
+
+            for (int ii = 2; ii <= 11; ii++)
+            {
+                fact *= ((double)ii);
+                cv = cv * tt;
+                if ((ii % 2) == 1)
+                {
+                    if ((ii % 4) == 1)
+                    {
+                        sumb = sumb + (cv * (1.0/fact));
+                    }
+                    else
+                    {
+                        sumb = sumb - (cv * (1.0/fact));
+                    }
+                }
+            }
+            return (sumb);
+        }
+
+        public static Mv Cos(Mv tt)
+        {
+            double fact = 1.0;
+            Mv sumb = new();
+            Mv cv = new();
+            sumb[Mvs] = 1.0;
+
+            for (int ii = 2; ii <= 10; ii++)
+            {
+                fact *= ((double)ii);
+                cv = cv * tt;
+                if ((ii % 2) == 0)
+                {
+                    if ((ii % 4) == 0)
+                    {
+                        sumb = sumb + (cv * (1.0/fact));
+                    }
+                    else
+                    {
+                        sumb = sumb - (cv * (1.0/fact));
+                    }
+                }
+            }
+            return (sumb);
+        }
+
 
     }
 }

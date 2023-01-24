@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "EUR8jcagTr+1Vk/Q0+7BpjXeHguuvobnG5qimRpEIO4vx8z/NOI4h7c1C82UHIAT0rGK6XhkaGygdyHsxyh6MA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Saul\\Source\\Repos\\ScudderSaul\\MultiVector\\MultiVector.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://www.myget.org/f/aspnetwebstacknightly'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

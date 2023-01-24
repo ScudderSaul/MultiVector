@@ -645,6 +645,10 @@ namespace MvLib
             return (rt);
         }
 
+
+        //  e^x=sum_(n= 0)^(infty) 1/(n!)x^n
+        // e^x=1+x+1/2x^2+1/6x^3+1/(24)x^4+... 	
+       
      public static Mv Exp(Mv tt)
         {
             double fact = 1.0;
@@ -653,11 +657,11 @@ namespace MvLib
             cv[Mvs] = 1.0;
             sumb[Mvs] = 1.0;
 
-            for (int ii = 1; ii <= 10; ii++)
+            for (int ii = 1; ii <= 8; ii++)
             {
-                fact *= ((double)ii);
-                cv = cv * tt;
-                sumb = sumb + (cv * (1.0/fact));
+                fact *= ((double)ii);    // n!
+                cv = cv * tt;            // x^n
+                sumb += (cv/fact);       // x^n/x!
             }
             return (sumb);
         }

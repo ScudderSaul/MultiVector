@@ -662,6 +662,10 @@ namespace MvLib
             return (sumb);
         }
 
+
+
+     // Maclaurin series for sinh cosh, sin cos,  etc.
+        //  sinhx=x+1/6x^3+1/(120)x^5+1/(5040)x^7+1/(362880)x^9+... 	
         public static Mv Sinh(Mv tt)
         {
             double fact = 1.0;
@@ -670,38 +674,119 @@ namespace MvLib
             cv = tt;
             sumb = tt;
 
-            for (int ii = 2; ii <= 11; ii++)
+            for (int ii = 1; ii <= 9; ii++)
             {
-                fact *= ((double)ii);
-                cv = cv * tt;
-                if ((ii % 2) == 1)
+                switch (ii)
                 {
-                    sumb = sumb + (cv * (1.0/fact));
+                    case 3:
+                        fact = 1.0 / 6.0;
+                        sumb += fact * cv;
+                        break;
+                    case 5:
+                        fact = 3.0 / 120.0;
+                        sumb += fact * cv;
+                        break;
+                    case 7:
+                        fact = 1.0/ 5040.0;
+                        sumb += fact * cv;
+                        break;
+                    case 9:
+                        fact = 1.0 / 362880.0;
+                        sumb += fact * cv;
+                        break;
+                    default:
+                       
+                        break;
                 }
+
+                cv = cv * tt;
             }
             return (sumb);
         }
 
-
+        // coshx=1+1/2x^2+1/(24)x^4+1/(720)x^6+1/(40,320)x^8+... 	
+       
         public static Mv Cosh(Mv tt)
         {
             double fact = 1.0;
             Mv sumb = new();
             Mv cv = new();
-            sumb[Mvs] = 1.0;
+            cv = tt;
+            sumb[0] = 1.0;
 
-            for (int ii = 2; ii <= 10; ii++)
+            for (int ii = 1; ii <= 9; ii++)
             {
-                fact *= ((double)ii);
-                cv = cv * tt;
-                if ((ii % 2) == 0)
+                switch (ii)
                 {
-                    sumb = sumb + (cv * (1.0/fact));
+                    case 2:
+                        fact = 1.0 / 2.0;
+                        sumb += fact * cv;
+                        break;
+                    case 4:
+                        fact = 1.0 / 24.0;
+                        sumb += fact * cv;
+                        break;
+                    case 6:
+                        fact = 1.0/ 720.0;
+                        sumb += fact * cv;
+                        break;
+                    case 8:
+                        fact = 1.0 / 40320.0;
+                        sumb += fact * cv;
+                        break;
+                    default:
+                        
+                        break;
                 }
+
+                cv = cv * tt;
             }
             return (sumb);
         }
 
+
+        // tan x=x+1/3x^3+2/(15)x^5+(17)/(315)x^7+(62)/(2835)x^9+... 	
+
+        public static Mv Tan(Mv tt)
+        {
+            double fact = 1.0;
+            Mv sumb = new();
+            Mv cv = new();
+            cv = tt;
+            sumb = tt;
+
+            for (int ii =  1; ii <= 9; ii++)
+            {
+                switch (ii)
+                {
+                    case 3:
+                        fact = 1.0 / 3.0;
+                        sumb += fact * cv;
+                        break;
+                    case 5:
+                        fact = 2.0 / 15.0;
+                        sumb += fact * cv;
+                        break;
+                    case 7:
+                        fact = 17.0/ 315.0;
+                        sumb += fact * cv;
+                        break;
+                    case 9:
+                        fact = 62.0 / 2835.0;
+                        sumb += fact * cv;
+                        break;
+                    default:
+                       
+                        break;
+                }
+
+                cv = cv * tt;
+            }
+            return (sumb);
+        }
+
+
+        // sin x=x-1/6x^3+1/(120)x^5-1/(5040)x^7+... 	
         public static  Mv Sin(Mv tt)
         {
             double fact = 1.0;
@@ -710,47 +795,74 @@ namespace MvLib
             cv = tt;
             sumb = tt;
 
-            for (int ii = 2; ii <= 11; ii++)
+            for (int ii = 1; ii <= 9; ii++)
             {
-                fact *= ((double)ii);
-                cv = cv * tt;
-                if ((ii % 2) == 1)
+                switch (ii)
                 {
-                    if ((ii % 4) == 1)
-                    {
-                        sumb = sumb + (cv * (1.0/fact));
-                    }
-                    else
-                    {
-                        sumb = sumb - (cv * (1.0/fact));
-                    }
+                    case 3:
+                        fact = -1.0 / 6.0;
+                        sumb += fact * cv;
+                        break;
+                    case 5:
+                        fact = 1.0 / 120.0;  // 5!
+                        sumb += fact * cv;
+                        break;
+                    case 7:
+                        fact = -1.0/ 5040.0;  // 6+1 !
+                        sumb += fact * cv;
+                        break;
+                    case 9:
+                        fact = 1.0 / 362880;  // 8+1 ! = (5040.0 * 8.0 * 9.0);
+                        sumb += fact * cv;
+                        break;
+                    default:
+                       
+                        break;
                 }
+
+                cv = cv * tt;
             }
             return (sumb);
         }
 
+
+        // cos x=1-1/2x^2+1/(24)x^4-1/(720)x^6+... 	
+        // cos x=sum_(n=0)^(infty)((-1)^n)/((2n)!)x^(2n) 	
+        
         public static Mv Cos(Mv tt)
         {
             double fact = 1.0;
             Mv sumb = new();
             Mv cv = new();
+            cv = tt;
             sumb[Mvs] = 1.0;
 
-            for (int ii = 2; ii <= 10; ii++)
+            for (int ii = 1; ii <= 9; ii++)
             {
-                fact *= ((double)ii);
-                cv = cv * tt;
-                if ((ii % 2) == 0)
+                switch (ii)
                 {
-                    if ((ii % 4) == 0)
-                    {
-                        sumb = sumb + (cv * (1.0/fact));
-                    }
-                    else
-                    {
-                        sumb = sumb - (cv * (1.0/fact));
-                    }
+                    case 2:
+                        fact = -1.0 / 2.0;
+                        sumb += fact * cv;
+                        break;
+                    case 4:
+                        fact = 1.0 / 24.0;  // 4!
+                        sumb += fact * cv;
+                        break;
+                    case 6:
+                        fact = -1.0/ 720.0;  // 6!
+                        sumb += fact * cv;
+                        break;
+                    case 8:
+                        fact = 1.0 / 40320;  // 8 ! = 720.0 * 7.0 * 8.0);
+                        sumb += fact * cv;
+                        break;
+                    default:
+                       
+                        break;
                 }
+
+                cv = cv * tt;
             }
             return (sumb);
         }
